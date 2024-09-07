@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom style</title>\
+    <style>
+       #box {
+        height: 200px;
+        width: 200px;
+        background-color: #9D73B1;
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 12px;
+        text-align: center;
+       }
+    </style>
+</head>
+<body>
+    <div id="box" name = "jsId">This is a simple div</div>
+    <p class="para">Tih is simple line paragraph</p>
+    <script>
+        let div = document.querySelector("#box").style.color = "purple";
+     
+        // div.style.color = "red";
+    </script>
+</body>
+</html>
