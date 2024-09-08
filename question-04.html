@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-04</title>
+    <style>
+      .content {
+        color: red;
+      }
+      .newClass{
+        background-color: green;
+      }
+    </style>
+</head>
+<body>
+    <!-- Qs.=> Create a «p» tag in html, give it a class & some styling. Now create a new class in CSS and try to append this class to the <p> element. Did you notice, how you overwrite the class name when you add a new one?
+    Solve this problem using classList. -->
+
+    <p class="content">I am a paragraph</p>
+
+    <script>
+      // Create a new class
+      let btn = document.createElement("button");
+      btn.innerText = "Add Class";
+      document.body.prepend(btn);
+
+      let btn2 = document.createElement("button");
+      btn2.innerText = "Remove Class";
+      document.body.prepend(btn2);
+
+      // Add event listener for button click
+      btn.addEventListener("click", function() {
+        let para = document.querySelector("p");
+        para.classList.add("newClass");
+      });
+
+      btn2.addEventListener("click", function() {
+        let para = document.querySelector("p");
+        para.classList.remove("newClass");
+      });
+    </script>
+</body>
+</html>
