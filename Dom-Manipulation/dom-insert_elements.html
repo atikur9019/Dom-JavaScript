@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Insert Elements</title>
+    <style>
+       #box {
+        height: 120px;
+        width: 190px;
+        background-color: #5B4166;
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 12px;
+        text-align: center;
+       }
+       #box ul {
+        list-style: none;
+        text-align: left;
+       }
+       #box ul li {
+        list-style: none;
+        text-align: left;
+       }
+    </style>
+</head>
+<body>
+    <div id="box" name="jsId">This is a simple div
+        <ul>List
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+        </ul>
+    </div>
+    <p class="para">This is a simple paragraph</p>
+
+    <script>
+        let createBtn = document.createElement('button');
+        createBtn.innerText = 'Create';
+        console.dir(createBtn);
+        
+        let div = document.querySelector('#box');
+        // div.append(createBtn); // adds at the end of the node (inside)
+        // div.prepend(createBtn); // adds at the start of the node (inside)
+        // div.before(createBtn); // adds before the node (outside)
+        // div.after(createBtn); // adds after the node (outside)
+        
+        let prg = document.querySelector('.para');
+        prg.after(createBtn);
+
+        // Creating a new heading element
+        let newHeading = document.createElement('h1');
+        newHeading.innerHTML = "<i>New Heading!</i>"; // Corrected innerHTML
+
+        // Prepending the heading to the body
+        document.querySelector('body').prepend(newHeading); // Prepend works directly, no need for a variable
+    </script>
+</body>
+</html>

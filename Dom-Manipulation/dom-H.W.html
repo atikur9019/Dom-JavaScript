@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.W = AppendChild & RemoveChild</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #F2F2F2;
+        }
+        .h1-class {
+            color: #FFFAD0;
+            font-size: 24px;
+            text-align: center;
+            font-family: "Helvetica Neue",Helvetica,Arial;
+            background-color: #1F2532;
+            padding: 12px 10px;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        h3 {
+            padding: 0 0 0 12px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #0092D0;
+        }
+        ul li {
+            color: #5B4166;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1-class">AppendChild & RemoveChild use</h1>
+
+    <h3>This is the appendChild() Method</h3>
+    <ul>
+        <li>Mango</li>
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+    </ul>
+    <div></div>
+
+    <script>
+        // Selecting the ul and div elements
+        let ulLi = document.querySelector("ul");
+        let div = document.querySelector("div");
+
+        // Creating and appending the "Add Fruit" button
+        let newBtn = document.createElement("button");
+        newBtn.innerText = "Add Fruit";
+        newBtn.setAttribute("onclick", "myFunction()");
+        newBtn.setAttribute("style", "margin: 20px; margin-top: 5px; background-color: #5B4166; border: none; padding: 9px 15px 9px; border-radius: 19px 18px; color: #fff; font-size: 13px;");
+        div.prepend(newBtn);
+
+        // Creating and appending the "Remove Fruit" button
+        let newBtn2 = document.createElement("button");
+        newBtn2.innerText = "Remove Fruit";
+        newBtn2.setAttribute("onclick", "remove()");
+        newBtn2.setAttribute("style", "margin: 20px; margin-top: 5px; background-color: #5B4166; border: none; padding: 9px 15px 9px; border-radius: 19px 18px; color: #fff; font-size: 13px;");
+        div.append(newBtn2);
+
+        // Function to add a new list item
+        function myFunction() {
+            let newLi = document.createElement("li");
+            newLi.innerText = "Coconut";
+            ulLi.appendChild(newLi);
+        }
+
+        // Function to remove the last list item
+        function remove() {
+            if (ulLi.children.length > 0) {
+                ulLi.removeChild(ulLi.lastElementChild);
+            }
+        }
+    </script>
+</body>
+</html>
