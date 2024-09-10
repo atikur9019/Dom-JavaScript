@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: #f2f2f2;
+            color: #000;
+            border: 1px solid #000; /* Fixed border syntax */
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            transition: background-color 0.5s ease-in-out;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        div:hover {
+            background-color: #ddd;
+        }
+     
+    </style>
+</head>
+<body>
+    <button id="btn1">Btn1</button>
+
+    <div id="box">This is a box</div>
+    
+    <script>
+      let btn1 = document.querySelector('#btn1');
+
+    // //   btn1.onclick = () => {
+    // //     console.log('Btn1 was clicked!');
+    // //     let a = 25;
+    // //     a++;
+    // //     console.log(a); // Logs 26
+    // //   }
+
+
+    // btn1.onclick = (evt) => {
+    //     console.log(evt); 
+    //     console.log(evt.type);
+    //     console.log(evt.target);
+    //     console.log(evt.clientX, evt.clientY);
+    // }
+    let div = document.querySelector('#box');
+    
+    //   div.onmouseover = (bx) => {
+        //     console.log(bx); 
+        //     console.log(bx.type);
+        //     console.log(bx.target);
+        //     console.log(bx.clientX, bx.clientY);
+        //   }
+
+        btn1.addEventListener('click', (evt) => {
+            console.log('button1 was clicked - handler1');
+        });
+
+        btn1.addEventListener('click', () => {
+            console.log('button1 was clicked - handler2');
+        });
+
+        
+        const handler3 = ('click', () => {
+            console.log('button1 was clicked - handler3');
+        });
+        btn1.addEventListener("click", handler3);
+        
+
+        const handler4 = ('click', () => {
+            console.log('button1 was clicked - handler4');
+        });
+        btn1.addEventListener("click", handler4);
+
+        btn1.removeEventListener("click", (handler3));
+        </script>
+</body>
+</html>

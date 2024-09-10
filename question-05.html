@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Dark Mode</title>
+</head>
+<body>
+    <!-- Toggle Button -->
+    <button id="mode">Switch to Dark Mode</button>
+
+    <p>Hi, I am Atikur Rhaman</p>
+
+    <script>
+        let moodBtn = document.querySelector('#mode');
+        let curMode = "light";
+
+        moodBtn.addEventListener('click', () => {
+            if (curMode === "light") {
+                console.log('Switched to Dark Mode');
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                curMode = "dark";
+                moodBtn.innerText = "Switch to Light Mode";
+            } else {
+                console.log('Switched to Light Mode');
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                curMode = "light";
+                moodBtn.innerText = "Switch to Dark Mode";
+            }
+        });
+    </script>
+</body>
+</html>
